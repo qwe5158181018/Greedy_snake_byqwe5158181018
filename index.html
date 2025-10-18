@@ -29,8 +29,6 @@
 		let dst = 0;
 		let apple = 0;
 		let speed = 150;
-		document.getElementById("_spdup").disabled = false;
-		document.getElementById("_spddn").disabled = false;
 		document.addEventListener("keydown",function(event){   //键盘事件监听
 			let _head = [Math.floor(sk[0]/40),sk[0]%40];
 			if(event.keyCode == 87 || event.keyCode == 38){ //w和上 
@@ -99,7 +97,7 @@
 			else if(dst == 3){
 				nxt = [_head[0],_head[1]-1];}
 				
-			if(sk.includes(nxt[0]*40+nxt[1]) || nxt[0]<0 || nxt[0]>40 ||nxt[1]<0 || nxt[1]>30){ //失败判断
+			if(sk.includes(nxt[0]*40+nxt[1]) || nxt[0]<0 || nxt[0]>39 ||nxt[1]<0 || nxt[1]>39){ //失败判断
 				document.getElementById("_spdup").disabled = false;
 				document.getElementById("_spddn").disabled = false;
 				window.clearInterval(game);
@@ -155,3 +153,4 @@
 </body>
 
 </html>
+
